@@ -4,7 +4,7 @@
 ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "${ROOT_DIR}"
 
-yarn && yarn build:desktop -v
+yarn && yarn build:desktop -b deb -v && yarn build:desktop -b rpm -v && NO_STRIP=1 yarn build:desktop -b appimage -v
 
 # Make release dir
 mkdir -p ./release
